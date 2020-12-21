@@ -25,26 +25,26 @@
 
 return [
     // Add you bot's API key and name
-    'api_key'      => 'your:bot_api_key',
-    'bot_username' => 'username_bot', // Without "@"
+    'api_key'      => '123456:abcdefghijklmnopqrstu',
+    'bot_username' => 'nameof_bot', // Without "@"
 
     // [Manager Only] Secret key required to access the webhook
-    'secret'       => 'super_secret',
+    'secret'       => 'Th3w0rld1ny0urh4nd',
 
     // When using the getUpdates method, this can be commented out
     'webhook'      => [
-        'url' => 'https://your-domain/path/to/hook-or-manager.php',
+        'url' => 'https://[yourdomain]/manager.php',
         // Use self-signed certificate
         // 'certificate'     => __DIR__ . '/path/to/your/certificate.crt',
         // Limit maximum number of connections
-        // 'max_connections' => 5,
+        'max_connections' => 30,
     ],
 
     // All command related configs go here
     'commands'     => [
         // Define all paths for your custom commands
         'paths'   => [
-            // __DIR__ . '/Commands',
+            __DIR__ . '/commands',
         ],
         // Here you can set any command-specific parameters
         'configs' => [
@@ -63,19 +63,19 @@ return [
     ],
 
     // Enter your MySQL database credentials
-    // 'mysql'        => [
-    //     'host'     => '127.0.0.1',
-    //     'user'     => 'root',
-    //     'password' => 'root',
-    //     'database' => 'telegram_bot',
-    // ],
+    'mysql'        => [
+        'host'     => '127.0.0.1',
+        'user'     => 'db_user',
+        'password' => 'db_password',
+        'database' => 'telegram_bot',
+    ],
 
     // Logging (Debug, Error and Raw Updates)
-    // 'logging'  => [
-    //     'debug'  => __DIR__ . '/php-telegram-bot-debug.log',
-    //     'error'  => __DIR__ . '/php-telegram-bot-error.log',
-    //     'update' => __DIR__ . '/php-telegram-bot-update.log',
-    // ],
+    'logging'  => [
+        'debug'  => __DIR__ . '/logs/php-telegram-bot-debug.log',
+        'error'  => __DIR__ . '/logs/php-telegram-bot-error.log',
+        'update' => __DIR__ . '/logs/php-telegram-bot-update.log',
+    ],
 
     // Set custom Upload and Download paths
     'paths'        => [

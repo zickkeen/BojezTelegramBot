@@ -1,15 +1,14 @@
-# PHP Telegram Bot Example
+# Bojez Telegram Bot
 
 > :construction: Work In Progress :construction:
 
-An A-Z example of Telegram bot using the [PHP Telegram Bot][core-github] library.
+An this project of Telegram bot using the [PHP Telegram Bot][core-github] library.
 
-This repository aims to demonstrate the usage of all the features offered by the PHP Telegram Bot library and as such contains all example commands.
-Also, it gives an example setup for both the standard usage and using the [PHP Telegram Bot Manager][bot-manager-github] 
+This project is OpenSource to develope, distribute and usage. 
 
 **:exclamation: Important!**
-- Most of the commands found here are **not to be used exactly as they are**, they are mere demonstrations of features! They are provided as-is and any **extra security measures need to be added by you**, the developer.
-- Before getting started with this project, make sure you have read the official [readme][core-readme-github] to understand how the PHP Telegram Bot library works and what is required to run a Telegram bot.
+- **additional security measures need to be added by you**, the developer.
+- Before starting this project, make sure you have read the official [readme] [core-readme-github] to understand how the Telegram Bot PHP library works and what it takes to run the Telegram bot.
 
 Let's get started then! :smiley:
 
@@ -18,13 +17,13 @@ Let's get started then! :smiley:
 To start off, you can clone this repository using git:
 
 ```bash
-$ git clone https://github.com/php-telegram-bot/example-bot.git
+$ git clone https://github.com/zickkeen/BojezTelegramBot.git
 ```
 
 or better yet, download it as a zip file:
 
 ```bash
-$ curl -o example-bot.zip https://github.com/php-telegram-bot/example-bot/archive/master.zip
+$ curl -o BojezTelegramBot.zip https://github.com/zickkeen/BojezTelegramBot/archive/master.zip
 ```
 
 Unzip the files to the root of your project folder.

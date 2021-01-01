@@ -49,22 +49,22 @@ try {
         $telegram->setCommandConfig($command_name, $command_config);
     }
 
-    Longman\TelegramBot\TelegramLog::initialize(
-       new Monolog\Logger('telegram_bot', [
-           (new Monolog\Handler\StreamHandler($config['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-           (new Monolog\Handler\StreamHandler($config['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-       ]),
-       new Monolog\Logger('telegram_bot_updates', [
-           (new Monolog\Handler\StreamHandler($config['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
-       ])
-    );
-
-    // Handle telegram getUpdates request
     $server_response = $telegram->handleGetUpdates();
-
+    // Handle telegram getUpdates request
+    if(count($server_response->getResult())){
+        Longman\TelegramBot\TelegramLog::initialize(
+            new Monolog\Logger('telegram_bot', [
+                (new Monolog\Handler\StreamHandler($config['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+                (new Monolog\Handler\StreamHandler($config['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+            ]),
+            new Monolog\Logger('telegram_bot_updates', [
+                (new Monolog\Handler\StreamHandler($config['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
+            ])
+        );
+    }
     if ($server_response->isOk()) {
         $update_count = count($server_response->getResult());
-        echo date('Y-m-d H:i:s') . ' - Processed ' . $update_count . ' updates';
+        echo date('Y-m-d H:i:s') . ' - Processed ' . $update_count . ' updates'. PHP_EOL;
     } else {
         echo date('Y-m-d H:i:s') . ' - Failed to fetch updates' . PHP_EOL;
         echo $server_response->printError();

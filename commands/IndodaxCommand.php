@@ -1,23 +1,20 @@
 <?php
 
 /**
- * This file is part of the PHP Telegram Bot example-bot package.
- * https://github.com/php-telegram-bot/example-bot/
+ * This file is part of the BojezTelegramBot example-bot package.
+ * https://github.com/zickkeen/BojezTelegramBot/
  *
- * (c) PHP Telegram Bot Team
+ * (c) BojezTelegramBot Team
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
 /**
- * User "/weather" command
+ * User "/indodax" command
  *
- * Get weather info for the location passed as the parameter..
+ * Get indodax info for the coin passed as the parameter..
  *
- * A OpenWeatherMap.org API key is required for this command!
- * You can be set in your config.php file:
- * ['commands']['configs']['weather'] => ['owm_api_key' => 'your_owm_api_key_here']
  */
 
 namespace Longman\TelegramBot\Commands\UserCommands;

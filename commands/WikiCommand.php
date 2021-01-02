@@ -37,7 +37,7 @@ class WikiCommand extends UserCommand
     /**
      * @var string
      */
-    protected $description = 'Show short short description from wikipedia';
+    protected $description = 'Show short description from wikipedia';
 
     /**
      * @var string
@@ -47,7 +47,7 @@ class WikiCommand extends UserCommand
     /**
      * @var string
      */
-    protected $version = '1.0.0';
+    protected $version = '1.0.1';
 
     /**
      * Base URI for wikipedia API
@@ -70,7 +70,7 @@ class WikiCommand extends UserCommand
         $query  = [
             'format'        =>'json',
             'action'        =>'query',
-            'prop'          => 'extracts',
+            'prop'          =>'extracts',
             'exintro'       =>1,
             'explaintext'   =>1,
             'redirects'     =>1,
@@ -106,8 +106,11 @@ class WikiCommand extends UserCommand
 
             $result     = $wiki_data->query;
             $pagesId    = $result->pageids[0];
-            $text       = $result->pages->{$pagesId}->extract;
+            $text       = $result->pages->{$pagesId}->extract ?? "Title {$title} not found";
+            return $this->replyToChat($text);
+        }else{
+            return $this->replyToChat('this is bug, report to admin @BojezCreative');
         }
-        return $this->replyToChat($text);
+        
     }
 }

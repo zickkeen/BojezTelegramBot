@@ -78,6 +78,31 @@ Do **NOT** just copy all of them to your bot, but instead learn from them and on
 
 Adding any extra commands to your bot that you don't need can be a security risk!
 
+## Donate
+
+### Donate to BojezTelegramBot
+* [![Paypal](https://img.shields.io/badge/Paypal-zickkeen-blue)](paypal.me/donateZickkeen)
+* [![Buy Me a coffee](https://img.shields.io/badge/BuyMeCofee-zickkeen-yellow)](buymeacoff.ee/zickkeen)
+* [![SociaBuzz](https://img.shields.io/badge/SociaBuzz-zickkeen-green)](https://sociabuzz.com/zickkeen/tribe)
+* [![BitCoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green)](https://sociabuzz.com/zickkeen/tribe)
+* [![BitCoin](https://img.shields.io/liberapay/gives/zickkeen?logo=zickkeen&style=social)](https://liberapay.com/zickkeen)
+
+### Donate to Core TelegramBot Engine
+All work on this bot consists of many hours of coding during our free time, to provide you with a Telegram Bot library that is easy to use and extend. If you enjoy using this library and would like to say thank you, donations are a great way to show your support.
+
+Donations are invested back into the project +1
+
+Thank you for keeping this project alive pray
+
+Patreon Patreon.com/phptelegrambot
+OpenCollective OpenCollective.com/php-telegram-bot
+Ko-fi Ko-fi.com/phptelegrambot
+Tidelift Tidelift.com/longman/telegram-bot
+Liberapay Liberapay.com/PHP-Telegram-Bot
+PayPal PayPal.me/noplanman (account of @noplanman)
+Bitcoin 166NcyE7nDxkRPWidWtG1rqrNJoD5oYNiV
+Ethereum 0x485855634fa212b0745375e593fAaf8321A81055
+
 ## To be continued!
 
 [core-github]: https://github.com/php-telegram-bot/core "php-telegram-bot/core"

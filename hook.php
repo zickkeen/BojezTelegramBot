@@ -21,21 +21,23 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Load all configuration options
-/** @var array $config */
-$config = require __DIR__ . '/config.php';
+/** @var array $cfg */
+$cfg = require __DIR__ . '/config.php';
 
 try {
     // Create Telegram API object
-    $telegram = new Longman\TelegramBot\Telegram($config['api_key'], $config['bot_username']);
+    $telegram = new Longman\TelegramBot\Telegram($cfg['api_key'], $cfg['bot_username']);
 
     // Enable admin users
-    $telegram->enableAdmins($config['admins']);
+    $telegram->enableAdmins($cfg['admins']);
 
     // Add commands paths containing your custom commands
-    $telegram->addCommandsPaths($config['commands']['paths']);
+    $telegram->addCommandsPaths($cfg['commands']['paths']);
 
     // Enable MySQL if required
-    $telegram->enableMySql($config['mysql']);
+    
+    if($cfg['webhook']['enabled'] && $cfg['mysql']['enabled'] )
+        $telegram->enableMySql($cfg['mysql']);
 
     // Logging (Error, Debug and Raw Updates)
     // https://github.com/php-telegram-bot/core/blob/master/doc/01-utils.md#logging
@@ -43,25 +45,25 @@ try {
     // (this example requires Monolog: composer require monolog/monolog)
     Longman\TelegramBot\TelegramLog::initialize(
        new Monolog\Logger('telegram_bot', [
-           (new Monolog\Handler\StreamHandler($config['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-           (new Monolog\Handler\StreamHandler($config['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+           (new Monolog\Handler\StreamHandler($cfg['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+           (new Monolog\Handler\StreamHandler($cfg['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
        ]),
        new Monolog\Logger('telegram_bot_updates', [
-           (new Monolog\Handler\StreamHandler($config['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
+           (new Monolog\Handler\StreamHandler($cfg['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
        ])
     );
 
     // Set custom Download and Upload paths
-    $telegram->setDownloadPath($config['paths']['download']);
-    $telegram->setUploadPath($config['paths']['upload']);
+    $telegram->setDownloadPath($cfg['paths']['download']);
+    $telegram->setUploadPath($cfg['paths']['upload']);
 
     // Load all command-specific configurations
-    foreach ($config['commands']['configs'] as $command_name => $command_config) {
+    foreach ($cfg['commands']['configs'] as $command_name => $command_config) {
         $telegram->setCommandConfig($command_name, $command_config);
     }
 
     // Requests Limiter (tries to prevent reaching Telegram API limits)
-    $telegram->enableLimiter($config['limiter']);
+    $telegram->enableLimiter($cfg['limiter']);
 
     // Handle telegram webhook request
     $telegram->handle();

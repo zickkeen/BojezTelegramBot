@@ -86,7 +86,7 @@ Adding any extra commands to your bot that you don't need can be a security risk
 * [![Paypal](https://img.shields.io/badge/Paypal-zickkeen-blue)](https://paypal.me/donateZickkeen)
 * [![Buy Me a coffee](https://img.shields.io/badge/BuyMeCofee-zickkeen-yellow)](https://buymeacoff.ee/zickkeen)
 * [![SociaBuzz](https://img.shields.io/badge/SociaBuzz-zickkeen-green)](https://sociabuzz.com/zickkeen/tribe)
-* [![ZBitcoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green) 18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf][ZBitcoin]
+* [![ZBitcoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green)][ZBitcoin]
 * [![liberapay](https://img.shields.io/liberapay/gives/zickkeen?logo=zickkeen&style=social)](https://liberapay.com/zickkeen)
 
 ### Donate to Core TelegramBot Engine

@@ -86,7 +86,7 @@ Adding any extra commands to your bot that you don't need can be a security risk
 * [![Paypal](https://img.shields.io/badge/Paypal-zickkeen-blue)](https://paypal.me/donateZickkeen)
 * [![Buy Me a coffee](https://img.shields.io/badge/BuyMeCofee-zickkeen-yellow)](https://buymeacoff.ee/zickkeen)
 * [![SociaBuzz](https://img.shields.io/badge/SociaBuzz-zickkeen-green)](https://sociabuzz.com/zickkeen/tribe)
-* [BitCoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green)
+* [![ZBitcoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green) 18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf][ZBitcoin]
 * [![liberapay](https://img.shields.io/liberapay/gives/zickkeen?logo=zickkeen&style=social)](https://liberapay.com/zickkeen)
 
 ### Donate to Core TelegramBot Engine
@@ -126,4 +126,5 @@ Thank you for keeping this project alive :pray:
 [Liberapay]: https://liberapay.com/PHP-Telegram-Bot "Donate with Liberapay"
 [PayPal-noplanman]: https://paypal.me/noplanman "Donate with PayPal"
 [Bitcoin]: https://www.blockchain.com/btc/address/166NcyE7nDxkRPWidWtG1rqrNJoD5oYNiV "Donate with Bitcoin"
+[ZBitcoin]: https://www.blockchain.com/btc/address/18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf "Donate with Bitcoin"
 [Ethereum]: https://etherscan.io/address/0x485855634fa212b0745375e593fAaf8321A81055 "Donate with Ethereum"

@@ -1,3 +1,5 @@
+
+application/x-httpd-php config.example.php ( PHP script, ASCII text )
 <?php
 
 /**
@@ -33,7 +35,8 @@ return [
 
     // When using the getUpdates method, this can be commented out
     'webhook'      => [
-        'url' => 'https://[yourdomain]/manager.php',
+        'enabled'   => true,
+        'url'       => 'https://[yourdomain]/manager.php',
         // Use self-signed certificate
         // 'certificate'     => __DIR__ . '/path/to/your/certificate.crt',
         // Limit maximum number of connections
@@ -64,6 +67,7 @@ return [
 
     // Enter your MySQL database credentials
     'mysql'        => [
+        'enabled'  => true,
         'host'     => '127.0.0.1',
         'user'     => 'db_user',
         'password' => 'db_password',

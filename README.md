@@ -88,6 +88,7 @@ Adding any extra commands to your bot that you don't need can be a security risk
 * [![SociaBuzz](https://img.shields.io/badge/SociaBuzz-zickkeen-green)](https://sociabuzz.com/zickkeen/tribe)
 * [![ZBitcoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green)][ZBitcoin]
 * [![liberapay](https://img.shields.io/liberapay/gives/zickkeen?logo=zickkeen&style=social)](https://liberapay.com/zickkeen)
+* [![BitCoin](https://img.shields.io/badge/btc-18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf-green)](https://www.blockchain.com/btc/address/18xbSr5kmvxzpHEpJ43LAbXqdZ1XcmKQNf)
 
 ### Donate to Core TelegramBot Engine
 All work on this bot consists of many hours of coding during our free time, to provide you with a Telegram Bot library that is easy to use and extend.

@@ -49,19 +49,21 @@ try {
         $telegram->setCommandConfig($command_name, $command_config);
     }
 
-    $server_response = $telegram->handleGetUpdates();
+    \Longman\TelegramBot\TelegramLog::$always_log_request_and_response = true;
+    \Longman\TelegramBot\TelegramLog::$remove_bot_token = false;
+
     // Handle telegram getUpdates request
-    if(count($server_response->getResult())){
-        Longman\TelegramBot\TelegramLog::initialize(
-            new Monolog\Logger('telegram_bot', [
-                (new Monolog\Handler\StreamHandler($config['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-                (new Monolog\Handler\StreamHandler($config['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-            ]),
-            new Monolog\Logger('telegram_bot_updates', [
-                (new Monolog\Handler\StreamHandler($config['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
-            ])
-        );
-    }
+    Longman\TelegramBot\TelegramLog::initialize(
+        new Monolog\Logger('telegram_bot', [
+            (new Monolog\Handler\StreamHandler($config['logging']['debug'], Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+            (new Monolog\Handler\StreamHandler($config['logging']['error'], Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+        ]),
+        new Monolog\Logger('telegram_bot_updates', [
+            (new Monolog\Handler\StreamHandler($config['logging']['update'], Monolog\Logger::INFO))->setFormatter(new Monolog\Formatter\LineFormatter('%message%' . PHP_EOL)),
+        ])
+     );
+    
+    $server_response = $telegram->handleGetUpdates();
     if ($server_response->isOk()) {
         $update_count = count($server_response->getResult());
         echo date('Y-m-d H:i:s') . ' - Processed ' . $update_count . ' updates'. PHP_EOL;
